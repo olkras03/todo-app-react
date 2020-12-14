@@ -25,7 +25,6 @@ class DeleteTodo extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="content">Todo:</label>
                     <input type="text" id="content" onChange={this.handleChange} />
-                    <button>Submit</button>
                 </form>
             </div>
         )

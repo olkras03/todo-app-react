@@ -2,9 +2,7 @@ import React, { Component } from 'react'
 
 class AddTodo extends Component {
     state = {
-        name: null,
-        age: null,
-        belt: null
+        content: '',
     }
 
     handleChange = (e) => {
@@ -17,14 +15,17 @@ class AddTodo extends Component {
         e.preventDefault();
         // console.log(this.state);
         this.props.addTodo(this.state);
+        this.setState({
+            content: ''
+        })
     }
 
     render() {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="content">Todo:</label>
-                    <input type="text" id="content" onChange={this.handleChange} />
+                    <label htmlFor="content">Add new todo:</label>
+                    <input type="text" id="content" onChange={this.handleChange} value={this.state.content} />
                     <button>Submit</button>
                 </form>
             </div>
